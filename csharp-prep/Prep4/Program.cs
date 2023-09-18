@@ -25,7 +25,6 @@ class Program
         var myStrings = new List<string>();
         {
         myStrings.Add("Hello");
-        }
 
         // Iterate 
         foreach (var i in myInts)

@@ -46,9 +46,12 @@ class Program
         
 
         //ask for a random number
-        Console.Write("what is your random number: ");
-        string randomNumberString = Console.ReadLine();
-        int randomNumber = int.Parse(randomNumberString);
+        //Console.Write("what is your random number: ");
+        //string randomNumberString = Console.ReadLine();
+        //int randomNumber = int.Parse(randomNumberString);
+
+        Random randomGenerator = new Random();
+        int randomNumber = randomGenerator.Next(1,11);
 
         int guessNumber = -1;
 
@@ -66,13 +69,13 @@ class Program
                 Console.WriteLine("You guessed too high");
             }
 
-        //Check if guess is low
+            //Check if guess is low
             if (guessNumber < randomNumber)
             {
                 Console.WriteLine("You guessed too low");
             }
 
-        //Check if guess is low
+            //Check if guess is low
             if (guessNumber == randomNumber)
             {
                 Console.WriteLine("You guessed right");
