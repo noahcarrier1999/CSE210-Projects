@@ -63,7 +63,7 @@ class Program
         //4. Test
 
         //Create DisplayWelcome
-        void DisplayWelcome()
+        static void DisplayWelcome()
         {
             Console.WriteLine("Welcome to the Program");
         }
