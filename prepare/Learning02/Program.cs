@@ -4,7 +4,9 @@ class Program
 {
     static void Main(string[] args)
     {
-
+        
+        
+        System.Console.WriteLine("testing");
         //Created first instance of the class job
         Job job1 = new Job();
         job1._jobTitle = "Software Engineer";
