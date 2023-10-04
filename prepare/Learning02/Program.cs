@@ -4,8 +4,9 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Learning02 World!");
-
+        
+        
+        System.Console.WriteLine("testing");
         //Created first instance of the class job
         Job job1 = new Job();
         job1._jobTitle = "Software Engineer";
