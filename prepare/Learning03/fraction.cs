@@ -3,15 +3,12 @@ public class Fraction{
     private int _top;
     private int _bottom;
 
-    //Meathods
-
+    //constructors
     public Fraction()
     {
         _top = 1;
         _bottom = 1;
     }
-
-
 
     public Fraction(int wholeNumber)
     {
@@ -28,6 +25,9 @@ public class Fraction{
     }
 
 
+
+
+    //getter and setter meathods
     public int GetTop()
     {
         return _top;
@@ -51,6 +51,11 @@ public class Fraction{
     }
 
 
+
+
+
+
+    //Functionality Meatods
     public string GetFractionString()
     {
        string stringFraction = $"{_top}/{_bottom}";
