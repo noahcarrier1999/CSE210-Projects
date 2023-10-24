@@ -6,42 +6,46 @@ public class Word
 
     private Random random = new Random();
     private Scripture scripture;
-    private List<string> nonBlankWords;
+    
+    private List<string> availableWords;
 
     //List of Removed words
-    private List<string> removedWords = new List<string>();
+    private List<string> removedWords;
     
     public Word(Scripture scripture, int x)
     {
         this.scripture = scripture;
-        nonBlankWords = scripture.scriptureWords(x);
+        availableWords = scripture.scriptureWords(x);
     }
 
+    //gives a count of available words
     public int getNonBlankWordCount()
     {
-        return nonBlankWords.Count();
+        return availableWords.Count();
     }
 
-
+    //shows what words are still available
     public List<string> getBlankWordList()
     {
-        return nonBlankWords;
+        return availableWords;
     }
 
-
+    //gets a list of words that have been removed
     public List<string> getRemovedWordsList()
     {
         return removedWords;
     }
 
+    //clears the removed words list
     public void resetRemovedWordsList()
     {
         removedWords.Clear();
     }
 
+    // resets the available words list
     public void resetNonBlankWordsList(int x)
     {
-        nonBlankWords = scripture.scriptureWords(x);
+        availableWords = scripture.scriptureWords(x);
     }
    
     // public void addRemovedWords(string word)
@@ -61,11 +65,13 @@ public class Word
 //Returns an array of the words removed
     public List<string> PickRanWords(string scripture, int amount, int index)
     {
-        int maxRemovals = Math.Min(amount, nonBlankWords.Count);
+        int maxRemovals = Math.Min(amount, availableWords.Count);
         
+        //repeats the take away for as many times as the user wants
         for (int i = 0; i < maxRemovals; i++) 
         {
-            if(nonBlankWords.Count == 0)
+            //Checks if there are still words to be removed
+            if(availableWords.Count == 0)
             {
                 System.Console.WriteLine("No more words to remove");
                 break;
@@ -73,13 +79,15 @@ public class Word
 
             
             //picks a random index
-            int randomindex = random.Next(nonBlankWords.Count);
+            int randomindex = random.Next(availableWords.Count);
             
-            string wordToRemove = nonBlankWords[randomindex];
+            //Chooses a random word to take away
+            string wordToRemove = availableWords[randomindex];
             removedWords.Add(wordToRemove);
 
-            nonBlankWords.RemoveAt(randomindex);
-                //System.Console.WriteLine("BlankWords" + string.Join(", ",nonBlankWords));
+            //removes from the available 
+            availableWords.RemoveAt(randomindex);
+
             
         }
         

@@ -16,23 +16,21 @@ public class Scripture
         "3 Behold, I would exhort you that when ye shall read these things, if it be wisdom in God that ye should read them, that ye would remember how merciful the Lord hath been unto the children of men, from the creation of Adam even down until the time that ye shall receive these things, and ponder it in your chearts.\n\n4 And when ye shall receive these things, I would exhort you that ye would ask God, the Eternal Father, in the name of Christ, if these things are not true; and if ye shall ask with a sincere heart, with real intent, having faith in Christ, he will manifest the truth of it unto you, by the power of the Holy Ghost.\n\n5 And by the power of the Holy Ghost ye may aknow the truth of all things."
     };
 
-    //Function
-    
-
-    
+    // inits the Random class
     Random random = new Random();
     
+    //gets the scripture list based upon the index
     public string getScripture(int x)
     {
-        //System.Console.WriteLine(_scriptures[x]); 
         return _scriptures[x];
     }
 
+    //separates the scripture my words and stores in list
     public List<string> scriptureWords(int x)
     {
        string scripture = getScripture(x);
 
-       string[] scriptureWords =scripture.Split(" ");
+       string[] scriptureWords = scripture.Split(" ");
 
        return scriptureWords.ToList();
 

@@ -19,6 +19,7 @@ class Program
 
         Program program = new Program();
 
+        //makes a separate class for each of the scriptures
         Word[] words = new Word[5];
         for (int i = 0; i < 5; i++)
         {
@@ -84,16 +85,6 @@ class Program
                 var removeWords = word.PickRanWords(scripture.getScripture(refIndex),amount,refIndex);
                 Console.Clear();
                 System.Console.WriteLine(reference.getReference(refIndex));
-                //System.Console.WriteLine(removeWords);
-
-                // List<string> removedWordsList = word.getRemovedWordsList();
-                // foreach(string item in removedWordsList)
-                // {
-                //     Console.WriteLine(item + " ");
-                // }
-                    
-               
-            
 
 
                 System.Console.WriteLine(string.Join(" ", word.replaceWithBlank(refIndex)));

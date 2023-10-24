@@ -8,13 +8,13 @@ public class Reference
         "Moroni 10:3-5"
     };
 
-
+    //gets reference
     public string getReference(int num)
     {
         return references[num]; 
     }
 
-
+    //makes a menu
      public void Menu()
     {
         System.Console.WriteLine(@$"
