@@ -1,65 +1,67 @@
 using System;
+using System.Reflection;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop04 World!");
+        
+        Activity activity = new Activity();
+        BreathingActivity breathingActivity = new BreathingActivity();
+        ReflectionActivity reflectionActivity = new ReflectionActivity();
+        ListingActivity listingActivity = new ListingActivity();
+        
+
+        while(true){
+
+            string responce = activity.displayMenu();
+
+            if (responce == "1"){ 
+                string activityName = breathingActivity.getActivityName();
+                string description = breathingActivity.getDescription();
+                int seconds = breathingActivity.displayIntro(activityName,description);
+
+                breathingActivity.getReady();
+                breathingActivity.startActivity(seconds);
+                breathingActivity.finished(seconds, activityName);
+                
+            }
+
+            else if (responce == "2"){
+                string activityName = reflectionActivity.getActivityName();
+                string description = reflectionActivity.getDescription();
+                int seconds = reflectionActivity.displayIntro(activityName, description);
+                string randPrompt = reflectionActivity.getRanPrompt();
+
+                reflectionActivity.getReady();
+                
+                reflectionActivity.displayMiniMenu(randPrompt);
+                
+                reflectionActivity.startActivity(seconds);
+
+                reflectionActivity.finished(seconds , activityName);
+
+            }
+            else if (responce == "3"){
+                string activityName = listingActivity.getActivityName();
+                string description = listingActivity.getDescription();
+                int seconds = listingActivity.displayIntro(activityName, description);
+                string ranQuestion = listingActivity.getRandQuestion();
 
 
-    }
-}
+                listingActivity.getReady();
+                
+                listingActivity.displayMiniMenu(ranQuestion);
 
-public class Vehicle {
-    protected string _make;
-    protected string _model;
-    protected int _miles;
+                listingActivity.startActivity(seconds);
 
-    public Vehicle(string make, string model, int miles){
-        _make = make;
-        _model = model;
-        _miles = miles;
-    }
-}
+                listingActivity.finished(30 , activityName);
+            }
+            else if(responce == "4"){
+                break;
+            }
+        }
+        
 
-class Car: Vehicle{
-    public Car(string make, string model, int miles) : base(make, model, miles){
-
-    }
-
-}
-
-class Truck: Vehicle{
-    private int _towing;
-
-    public Truck(string make, string model, int miles, int towing) : base(make,model,miles){
-        _towing = towing;
-    }
-
-}
-
-
-
-public class Shape{
-    private string _color;
-
-    public Shape(string color){
-        _color = color;
-    }
-}
-
-public class Circle:Shape{
-    private float _radius;
-
-    public Circle(string color, float radius) :base(color){
-        _radius = radius;
-    }
-}
-
-public class Square:Shape{
-    private float _sideLength;
-
-    public Square(string color, float sideLength) :base(color){
-        _sideLength = sideLength;
     }
 }
