@@ -19,6 +19,11 @@ public class ListingActivity : Activity {
 
     };
 
+    // public int getResponceCount(){
+
+    //     return _responceList.Count();
+    // }
+
     public string getRandQuestion(){
         return getRandItem(_ranQuestions);
     }
@@ -33,11 +38,13 @@ public class ListingActivity : Activity {
 
     public void displayMiniMenu(string ranQuestion){
         
-        Console.WriteLine("List as many responces you canto the following prompt:");
+        Console.WriteLine();
+        Console.WriteLine("List as many responces you can to the following prompt:");
         Console.WriteLine();
         Console.WriteLine($"---{ranQuestion}---"); 
         Console.WriteLine();
         System.Console.Write("You may begin in: ");
+        Console.WriteLine();
         countDownTimer(5);
     }
 
@@ -45,10 +52,15 @@ public class ListingActivity : Activity {
         DateTime startTime = DateTime.Now;
         DateTime endtime = startTime.AddSeconds(seconds);
         
-        Console.Write("> ");
-        while(DateTime.Now > endtime){
+        
+        while(DateTime.Now < endtime){
+            Console.Write("> ");
             string responce = Console.ReadLine();
             _responceList.Add(responce);
         }
+
+        Console.WriteLine($"You listed {_responceList.Count()} items");
+        Console.WriteLine("Press Enter to Continue");
+        Console.ReadLine();
     }
 }

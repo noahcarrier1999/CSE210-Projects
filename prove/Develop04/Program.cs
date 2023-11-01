@@ -22,7 +22,9 @@ class Program
                 int seconds = breathingActivity.displayIntro(activityName,description);
 
                 breathingActivity.getReady();
+
                 breathingActivity.startActivity(seconds);
+
                 breathingActivity.finished(seconds, activityName);
                 
             }
@@ -55,10 +57,17 @@ class Program
 
                 listingActivity.startActivity(seconds);
 
-                listingActivity.finished(30 , activityName);
+                listingActivity.finished(seconds , activityName);
             }
             else if(responce == "4"){
                 break;
+            }
+
+            else
+            {
+                Console.WriteLine();
+                Console.WriteLine("Not a valid input Press Enter to try again");
+                Console.ReadLine();
             }
         }
         

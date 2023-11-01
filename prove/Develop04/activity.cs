@@ -97,7 +97,7 @@ Menu Options:
         Console.WriteLine();
         Console.WriteLine($"You have completed {seconds} seconds of the {activityName}");
         
-        spinAnimation(2);
+        spinAnimation(4);
 
     }
 

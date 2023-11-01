@@ -32,7 +32,7 @@ public class BreathingActivity : Activity{
             System.Console.WriteLine(); 
             
             System.Console.WriteLine();
-            System.Console.Write("Breath out  ");
+            System.Console.Write("Breath out slowly  ");
             countDownTimer(8);
             System.Console.WriteLine();
         }
