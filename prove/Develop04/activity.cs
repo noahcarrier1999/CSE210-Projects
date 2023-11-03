@@ -8,11 +8,10 @@ public class Activity{
 
     private string _description;
 
-
-    // public Activity(string activityName, string description){
-    //     _activityname = activityName;
-    //     _description = description;
-    // }
+    public Activity(string activityName, string description){
+        _activityname = activityName;
+        _description = description;
+     }
     // Displays the menu and returns the responce
     public string displayMenu(){
         string menu =@"

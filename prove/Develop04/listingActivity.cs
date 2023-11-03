@@ -19,10 +19,9 @@ public class ListingActivity : Activity {
 
     };
 
-    // public int getResponceCount(){
-
-    //     return _responceList.Count();
-    // }
+    public ListingActivity(string activity, string description) : base(activity, description){
+        
+    }
 
     public string getRandQuestion(){
         return getRandItem(_ranQuestions);

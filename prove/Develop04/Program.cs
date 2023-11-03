@@ -6,10 +6,10 @@ class Program
     static void Main(string[] args)
     {
         
-        Activity activity = new Activity();
-        BreathingActivity breathingActivity = new BreathingActivity();
-        ReflectionActivity reflectionActivity = new ReflectionActivity();
-        ListingActivity listingActivity = new ListingActivity();
+        Activity activity = new Activity("","");
+        BreathingActivity breathingActivity = new BreathingActivity("","");
+        ReflectionActivity reflectionActivity = new ReflectionActivity("","");
+        ListingActivity listingActivity = new ListingActivity("","");
         
 
         while(true){
