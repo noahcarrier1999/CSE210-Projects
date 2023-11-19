@@ -1,0 +1,3 @@
+SIMPLE|simple|simple goal|34|0
+ETERNAL|eternal|eternal goal|33
+CHECKLIST|checklist|cheklist Goal|44|3|500|0
