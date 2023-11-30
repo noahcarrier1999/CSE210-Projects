@@ -1,0 +1,9 @@
+
+
+
+
+public class RecipeManager:Manager{
+
+
+    
+}
