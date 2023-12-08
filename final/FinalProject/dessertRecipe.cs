@@ -1,10 +1,13 @@
 
 
 
-public class DessertRecipe:Recipe{
+public class DessertRecipe:Recipe
+{
 
-    public DessertRecipe(string Name, List<string> Ingredients, string Description ) :base(Name,Ingredients,Description){
 
+    public DessertRecipe(string Name, List<Ingredient> Ingredients, string Description) :base(Name,Description)
+    {
+        
     }
     
 }

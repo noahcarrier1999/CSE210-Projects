@@ -4,39 +4,38 @@
 
 public class Recipe{
 
-    //Variables
+    //Variables.
     private string _name;
-    private List<string> _ingredients;
     private string _description;
+    private List<Ingredient> _ingredients;
 
-    public Recipe(string Name, List<string> Ingredients, string Description){
+    public string Name { get => _name;}
+    public string Description { get => _description; }
+    public IReadOnlyList<Ingredient> Ingredients { get => _ingredients.AsReadOnly(); }
+    
+
+    public Recipe(string Name, string Description){
         
         _name = Name;
-        _ingredients = Ingredients;
         _description = Description;
-
-    }
-
-    public string Name{
-
-        get{return _name;}
-        set{_name = value;}
-    }
-
-    public List<string> Ingredients{
+        _ingredients = new List<Ingredient>();
         
-        get{return _ingredients;}
-        set{_ingredients = value;}
+
     }
 
-    public string Description{
-        
-        get{return _description;}
-        set{_description = value;}
+
+    public void AddIngredient(Ingredient ingredient){
+        _ingredients.Add(ingredient);
     }
 
-//    public string DisplayRecipe(){
-        
-//    }
+    public virtual void Display() {
+        Console.WriteLine($"Recipe: {Name}");
+        Console.WriteLine($"Description: {Description}");
+        Console.WriteLine("Ingredients:");
+        foreach (var ingredient in Ingredients) {
+            Console.WriteLine($"{ingredient.Amount} {ingredient.Unit} of {ingredient.IngName}");
+        }
+        Console.WriteLine("------------------------------");
+    }
 
 }

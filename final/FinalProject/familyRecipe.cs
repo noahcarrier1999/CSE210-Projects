@@ -3,8 +3,13 @@
 
 public class FamilyRecipe:Recipe{
 
-    public FamilyRecipe(string Name, List<string> Ingredients, string Description ) :base(Name,Ingredients,Description){
+    private string _owner;
+    
+    public string Owner {get => _owner;}
 
+    public FamilyRecipe(string Name, List<Ingredient> Ingredients, string Description ) :base(Name,Description){
+        _owner = Owner;
     }
+
     
 }
